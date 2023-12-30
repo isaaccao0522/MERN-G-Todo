@@ -7,6 +7,7 @@ const typeDefs = `#graphql
     title: String,
     detail: String,
     createdAt: Date!
+    updatedAt: Date
   }
 
   type Query {
@@ -18,6 +19,11 @@ const typeDefs = `#graphql
   type Mutation {
     addTodo (
       title: String, detail: String) : Todo
+
+    deleteTodo ( id:ID): Todo
+    # deleteAll:[Todo]
+  
+    updateTodo ( id:ID, title: String, detail: String, updatedAt: Date): Todo
   }
 `;
 
